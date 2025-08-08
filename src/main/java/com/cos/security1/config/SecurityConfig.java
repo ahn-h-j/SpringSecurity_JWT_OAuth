@@ -36,8 +36,8 @@ public class SecurityConfig { // WebSecurityConfigurerAdapter 상속 제거
         // 3. 폼 로그인 설정 (최신 방식)
         http.formLogin(form -> form
                 .loginPage("/loginForm") // 커스텀 로그인 페이지 경로
-                .loginProcessingUrl("/loginProc") // 로그인 처리 URL (이 URL로 오는 요청을 시큐리티가 가로채서 로그인 처리)
-                .defaultSuccessUrl("/") // 로그인 성공 시 이동할 기본 URL
+                .loginProcessingUrl("/login") // 로그인 처리 URL (이 URL로 오는 요청을 시큐리티가 가로채서 로그인 처리) 컨트롤러를 만들 필요가 없어짐
+                .defaultSuccessUrl("/") // loginForm에서 로그인 하면 /로 보내줌 but 다른 페이지에서 로그인 시도하면 해당 페이지로 이동함
         );
 
         return http.build();
