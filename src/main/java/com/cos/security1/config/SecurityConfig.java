@@ -11,7 +11,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration // IoC 빈(bean)을 등록
 @EnableWebSecurity // 필터 체인 관리 시작 어노테이션
-@EnableMethodSecurity(prePostEnabled = true, securedEnabled = true) // @EnableGlobalMethodSecurity 대신 최신 어노테이션 사용
+@EnableMethodSecurity(prePostEnabled = true, securedEnabled = true) // secured 어노테이션 활성화, preAuthorize 어노테이션 활성화
 public class SecurityConfig { // WebSecurityConfigurerAdapter 상속 제거
 
     @Bean
