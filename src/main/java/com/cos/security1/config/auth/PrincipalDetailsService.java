@@ -15,7 +15,7 @@ public class PrincipalDetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
-
+    //해당 메서드 종료시 @Authentication 이 만들어짐
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
